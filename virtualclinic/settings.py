@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1#^eo+u6b2k+kag#gu2-$g%#g!!x*dyvg(t#guzku-&^=q^^rq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # True
+DEBUG = False # True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','virtual-clinic.onrender.com']
 
@@ -92,15 +92,23 @@ DATABASES = {
 #    )
 # }
 
+# DATABASES = {
+#     'default':{
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'virtual_clinic',
+#         'USER': 'admin',
+#         'PASSWORD': 'Admin@vc1',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
+
+
 DATABASES = {
-    'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'virtual_clinic',
-        'USER': 'admin',
-        'PASSWORD': 'Admin@vc1',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': dj_database_url.parse(
+        "mysql://root:FbvlflxCRdGSXyKuRQMWgnsxryrLzcvQ@shinkansen.proxy.rlwy.net:18084/railway"
+    )
 }
 
 
